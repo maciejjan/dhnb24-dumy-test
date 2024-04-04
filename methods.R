@@ -40,10 +40,10 @@ chinwhisp <- function(m) {
   clust <- 1:(nrow(m))
   iter <- 1
   # convert the matrix to list of neighbors per line for optimization purposes
-  sim_idx <- lapply(
-    1:nrow(sims),
+  nb_idx <- lapply(
+    1:nrow(m),
     function(i) {                # for each line
-      y <- which(sims[i,] > 0)   # get a list of neighbors
+      y <- which(m[i,] > 0)      # get a list of neighbors
       y <- y[y != i]             # discard the similarity of the line to itself
       names(y) <- NULL           # discard the neighbors' names
       y
@@ -55,10 +55,10 @@ chinwhisp <- function(m) {
     for (i in sample(1:(nrow(m)))) {   # go through the lines in random order
       # calculate the scores for each proposed new cluster
       # based on the neighbors' clusters
-      v <- ave(m[i,sim_idx[[i]] ], clust[ sim_idx[[i]] ], FUN=sum)
+      v <- ave(m[i,nb_idx[[i]] ], clust[ nb_idx[[i]] ], FUN=sum)
       # if there are any proposals -> choose the best one
       if (any(v > 0)) {
-        newcl <- clust[ sim_idx[[i]] ][which.max(v)]
+        newcl <- clust[ nb_idx[[i]] ][which.max(v)]
         changed <- changed | (clust[i] != newcl)
         if (clust[i] != newcl) {
           clust[i] <- newcl
