@@ -9,7 +9,7 @@ data <- read.csv("dumy.csv") %>%
 # preprocessing
 text.cl <- data$Text %>%
   stri_replace_all_regex("\\s+", " ") %>%         # normalize spaces
-  stri_trans_tolower() %>%                        # lowerase
+  stri_trans_tolower() %>%                        # lowercase
   stri_replace_all_regex(                         # remove punctuation and accents
     "[-,–:!?.;—‒‘’“”»«()…\u0301\u0302]", "") %>%
   stri_replace_all_regex("[0-9]", "") %>%         # remove digits
