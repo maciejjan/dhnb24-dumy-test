@@ -1,17 +1,26 @@
 library(dplyr)
+library(stringi)
 
 source("methods.R")
 
 data <- read.csv("dumy.csv") %>%
   select("song_id", "position", "Text")
 
-# TODO preprocessing
-# - remove punctuation
-# - lowercase
-# - normalize whitespaces
+# preprocessing
+text.cl <- data$Text %>%
+  stri_replace_all_regex("\\s+", " ") %>%         # normalize spaces
+  stri_trans_tolower() %>%                        # lowerase
+  stri_replace_all_regex(                         # remove punctuation and accents
+    "[-,–:!?.;—‒‘’“”»«()…\u0301\u0302]", "") %>%
+  stri_replace_all_regex("[0-9]", "") %>%         # remove digits
+  stri_trans_char("áéýó", "аеуо") %>%             # remove the precombined accents
+  stri_trim_both()                                # remove leading and trailing spaces
 
 # calculate the n-gram frequency vectors
-vec <- vectorize(data$Text)
+# Looking at the bigram frequency list, we might need as many as 800
+# relevant bigrams. The amount of common letter combinations seems to be
+# larger than in Finnish and Estonian combined.
+vec <- vectorize(text.cl, n = 2, dim = 800)
 
 # normalize the vectors to length 1
 vec <- vec / sqrt(apply(vec^2, 1, sum))
