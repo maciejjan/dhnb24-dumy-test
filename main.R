@@ -66,7 +66,6 @@ cooc.stats <- cooc %>%
   inner_join(clust_data, by=c(clust_id.y = 'clust_id')) %>%
   mutate(lmi = n*log(n*total / (freq.x * freq.y)))
 
-
 ### VIEWING THE RESULTS
 
 # in Rstudio:
