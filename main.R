@@ -66,6 +66,7 @@ cooc.stats <- cooc %>%
   inner_join(clust_data, by=c(clust_id.y = 'clust_id')) %>%
   mutate(lmi = n*log(n*total / (freq.x * freq.y)))
 
+
 ### VIEWING THE RESULTS
 
 # in Rstudio:
@@ -73,3 +74,6 @@ View(cooc.stats)
 
 # writing
 write.table(cooc.stats, "cooc_dumy.csv", row.names=FALSE, sep=";")
+
+forgephi = cooc.stats %>% ungroup() %>% filter(freq.x>3 & freq.y>3) %>% select(Source=text.x, Target=text.y, Weight = lmi)
+write.table(forgephi, "dumy_gephi.csv", row.names=FALSE, sep=";")
