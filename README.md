@@ -18,6 +18,7 @@ the following book:
 
 `main.R` runs the following computational methods:
 * text preprocessing (removal of punctuation, lowercasing etc.)
+* #enn did something
 * computation of line similarity (cosine similarity of character bigrams)
 * clustering lines by similarity using the Chinese Whispers algorithm
 * calculating a co-occurrence measure on line clusters (Lexicographer's Mutual Information)
