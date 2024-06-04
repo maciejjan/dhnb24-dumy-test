@@ -5,6 +5,7 @@
 made for the purpose of demonstrating Git.
 
 This is a new change that Maciej made.
+This is another change to demonstrate the command line.
 
 This repository contains the code and data used in the following
 presentation and planned article:
