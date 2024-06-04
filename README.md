@@ -1,5 +1,9 @@
 # Computational analysis of Ukrainian dumy
 
+**Note:** This is a copy of the 
+[original repository](https://github.com/maciejjan/dhnb24-dumy)
+made for the purpose of demonstrating Git.
+
 This repository contains the code and data used in the following
 presentation and planned article:
 * Olha Petrovych, Mari Sarv, Maciej Janicki and Kati Kallio. 2024. How to analyse variation in folklore: Finnic runosongs and Ukrainian dumas. *Digital Humanities in the Nordic & Baltic Countries*, Reykjavik, May 2024.
