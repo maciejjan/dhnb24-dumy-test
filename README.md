@@ -1,3 +1,5 @@
+I am Taive, I love Ukrainian Dumas. I added some elephants here, to practice my computer skills. 
+
 # Computational analysis of Ukrainian dumy
 
 **Note:** This is a copy of the
