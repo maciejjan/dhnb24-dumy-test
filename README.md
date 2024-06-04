@@ -1,6 +1,6 @@
 # Computational analysis of Ukrainian dumy
 
-**Note:** This is a copy of the 
+**Note:** This is a copy of the
 [original repository](https://github.com/maciejjan/dhnb24-dumy)
 made for the purpose of demonstrating Git.
 
