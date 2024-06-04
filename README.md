@@ -32,5 +32,7 @@ further analysis.
 The file `methods.R` contains some functions that are called in `main.R`,
 namely the n-gram-based vectorization and Chinese Whispers clustering.
 
+This is a change I made directly on Github.
+
 Mari tried to add something
 This is now my change.
