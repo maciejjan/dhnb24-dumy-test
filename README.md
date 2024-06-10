@@ -38,3 +38,6 @@ Mari tried to add something
 This is now my change.
 
 New change made by Olha.
+
+Inna made a change.
+
